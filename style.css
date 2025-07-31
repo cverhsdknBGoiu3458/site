@@ -144,7 +144,7 @@ header nav a:hover {
 }
 
 /* 🏢 Service Cards */
-cards {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -188,6 +188,20 @@ cards {
 .benefit:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* 🔗 LinkedIn Icon Link */
+footer a[target="_blank"] {
+  color: #0A66C2; /* LinkedIn Blue */
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+footer a[target="_blank"]:hover {
+  color: #004182; /* darker LinkedIn blue on hover */
 }
 
 /* ⚫ Footer */

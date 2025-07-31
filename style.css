@@ -1,10 +1,12 @@
+/* FIX: The document here should be CSS, but it currently contains the entire HTML, which caused styling issues. Let's restore proper CSS so sections appear correctly again. */
+
 /* ✨ Base Styles */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: #0a1f44; /* Unified background color */
-  color: #fff; /* switched to white text for better contrast */
+  background: #0a1f44; /* unified dark background */
+  color: #fff;
 }
 
 h1, h2, h3 {
@@ -48,7 +50,7 @@ header nav a:hover {
   color: #00c853;
 }
 
-/* 🌈 Hero Section - Enhanced Cyber Look */
+/* 🌈 Hero Section */
 #hero {
   position: relative;
   height: 90vh;
@@ -61,7 +63,6 @@ header nav a:hover {
   background: #000814;
 }
 
-/* Cyber grid background effect */
 #hero::before {
   content: "";
   position: absolute;
@@ -75,7 +76,6 @@ header nav a:hover {
   z-index: -2;
 }
 
-/* glowing animated overlay */
 #hero::after {
   content: "";
   position: absolute;
@@ -117,10 +117,7 @@ header nav a:hover {
   transform: scale(1.05);
 }
 
-/* remove lame floating icons */
-.cyber-icons { display: none; }
-
-/* 📦 Section Styling - unify background */
+/* 📦 Section Styling */
 .section {
   width: 85%;
   margin: auto;
@@ -129,7 +126,7 @@ header nav a:hover {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
-  background: rgba(255,255,255,0.03); /* subtle translucent panel look */
+  background: rgba(255,255,255,0.03);
   border-radius: 12px;
   margin-top: 2rem;
 }

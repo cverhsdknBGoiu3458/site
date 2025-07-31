@@ -117,5 +117,22 @@
   <footer>
     <p>© 2025 Veracity Cyber. All Rights Reserved.</p>
   </footer>
+  <script>
+  const sections = document.querySelectorAll('.section');
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < triggerBottom){
+        section.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // run on page load
+</script>
+
 </body>
 </html>

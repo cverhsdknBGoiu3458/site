@@ -1,6 +1,6 @@
-/* ✨ Base Styles - v0.1.6 */
+/* ✨ Base Styles - v0.1.7 */
 
-/* NOTE: Updated to ensure all sections are always visible and styled correctly. */
+/* NOTE: Updated to remove unnecessary large blank spaces and smooth out layout */
 
 body {
   margin: 0;
@@ -52,10 +52,10 @@ header nav a:hover {
   color: #00c853;
 }
 
-/* 🌈 Hero Section with Enhanced Cyber Background */
+/* 🌈 Hero Section */
 #hero {
   position: relative;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,7 @@ header nav a:hover {
   animation: gradientMove 14s ease infinite;
 }
 
-/* Animated cyber grid overlay */
+/* Cyber overlays */
 #hero::after {
   content: "";
   position: absolute;
@@ -80,18 +80,11 @@ header nav a:hover {
   z-index: 0;
 }
 
-/* Light diagonal data lines overlay */
 #hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    60deg,
-    rgba(255,255,255,0.08) 0,
-    rgba(255,255,255,0.08) 1px,
-    transparent 1px,
-    transparent 60px
-  );
+  background: repeating-linear-gradient(60deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 60px);
   opacity: 0.3;
   animation: flowLines 20s linear infinite;
   pointer-events: none;
@@ -154,11 +147,11 @@ header nav a:hover {
 .section {
   width: 85%;
   margin: auto;
-  padding: 4rem 0;
+  padding: 3rem 0; /* reduced padding to remove excess whitespace */
   text-align: center;
-  opacity: 1 !important; /* Always visible */
-  transform: translateY(0) !important; /* Disable hidden offset */
-  transition: none; /* No fade needed */
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none;
 }
 
 .dark-section {
@@ -215,7 +208,7 @@ header nav a:hover {
 
 /* 🔗 LinkedIn Icon Link */
 footer a[target="_blank"] {
-  color: #0A66C2; /* LinkedIn Blue */
+  color: #0A66C2;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
@@ -224,7 +217,7 @@ footer a[target="_blank"] {
 }
 
 footer a[target="_blank"]:hover {
-  color: #004182; /* darker LinkedIn blue on hover */
+  color: #004182;
 }
 
 /* ⚫ Footer */
@@ -236,4 +229,4 @@ footer {
   margin-top: 2rem;
 }
 
-/* VERSION 0.1.6 */
+/* VERSION 0.1.7 */

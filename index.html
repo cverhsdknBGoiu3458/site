@@ -4,29 +4,29 @@ ChatGPT Version Log:
 - 0.1.1 – Added new horizontal logo to the header
 - 0.1.2 – Cyber animated hero background
 - 0.1.3 – Careers page link created
-- 0.1.4 – Careers nav link points to careers.html and 'See Open Roles' updated
+- 0.1.4 – Careers nav link points to careers.html
 - 0.1.5 – Fixed anchor navigation to About, Services, Benefits
+- 0.1.6 – CSS improvements for visibility
+- 0.1.7 – Section padding adjusted
+- 0.1.8 – Prepping index cleanup
+- 0.1.9 – Removed inline min-height from sections
 -->
 
-<!-- Veracity Cyber GitHub Pages Site - Version 0.1.5 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.1.5</title>
+  <title>Veracity Cyber v0.1.9</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth; /* enable smooth scrolling for anchors */
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <!-- Updated logo -->
       <img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;">
       <nav>
         <a href="#about">About</a>
@@ -47,14 +47,15 @@ ChatGPT Version Log:
     </div>
   </section>
 
-  <section id="about" class="section visible" style="min-height:100vh;">
+  <!-- Removed inline min-height from these sections -->
+  <section id="about" class="section visible">
     <div class="container">
       <h2>About Us</h2>
       <p>Veracity Cyber is dedicated to securing the digital future. We blend innovation with integrity, offering tailored solutions to protect businesses from evolving cyber threats.</p>
     </div>
   </section>
 
-  <section id="services" class="section dark-section visible" style="min-height:100vh;">
+  <section id="services" class="section dark-section visible">
     <div class="container">
       <h2>Our Core Competencies</h2>
       <div class="cards">
@@ -78,7 +79,7 @@ ChatGPT Version Log:
     </div>
   </section>
 
-  <section id="benefits" class="section visible" style="min-height:100vh;">
+  <section id="benefits" class="section visible">
     <div class="container">
       <h2>Why Work With Us</h2>
       <div class="benefits-grid">
@@ -126,7 +127,7 @@ ChatGPT Version Log:
     </div>
   </section>
 
-  <section id="careers" class="section dark-section visible" style="min-height:100vh;">
+  <section id="careers" class="section dark-section visible">
     <div class="container">
       <h2>Join Our Team</h2>
       <p>We’re hiring passionate cybersecurity professionals who want to make a real impact. Help shape the future of digital security with us.</p>
@@ -134,7 +135,7 @@ ChatGPT Version Log:
     </div>
   </section>
 
-  <section id="contact" class="section visible" style="min-height:100vh;">
+  <section id="contact" class="section visible">
     <div class="container">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:info@veracitycyber.com">info@veracitycyber.com</a></p>
@@ -142,7 +143,7 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.1.5</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.1.9</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
         <!-- LinkedIn SVG Icon -->

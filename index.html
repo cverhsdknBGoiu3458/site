@@ -11,6 +11,7 @@ ChatGPT Version Log:
 - 0.1.8 – Prepping index cleanup
 - 0.1.9 – Removed inline min-height from sections
 - 0.2.0 – Logo now links back to main page
+- 0.2.1 – Hero section upgraded with cyber network overlay and data particles
 -->
 
 <!DOCTYPE html>
@@ -18,17 +19,45 @@ ChatGPT Version Log:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.2.0</title>
+  <title>Veracity Cyber v0.2.1</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
+    .hero-network {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-network svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      animation: floatNetwork 12s ease-in-out infinite alternate;
+    }
+    @keyframes floatNetwork {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-20px); }
+    }
+    .data-packet {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #00ffcc;
+      border-radius: 50%;
+      animation: dataFlow 8s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes dataFlow {
+      0% { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(300px,-300px) scale(0.8); opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <!-- ✅ Logo now links to main page -->
       <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;"></a>
       <nav>
         <a href="#about">About</a>
@@ -42,6 +71,34 @@ ChatGPT Version Log:
 
   <section id="hero">
     <div class="animated-bg"></div>
+
+    <!-- ✅ NEW SVG overlay for cyber network feel -->
+    <div class="hero-network">
+      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
+          <line x1="50" y1="100" x2="200" y2="150"/>
+          <line x1="200" y1="150" x2="400" y2="100"/>
+          <line x1="400" y1="100" x2="600" y2="200"/>
+          <line x1="100" y1="300" x2="300" y2="350"/>
+          <line x1="300" y1="350" x2="500" y2="250"/>
+        </g>
+        <g fill="rgba(255,255,255,0.4)">
+          <circle cx="50" cy="100" r="4"/>
+          <circle cx="200" cy="150" r="4"/>
+          <circle cx="400" cy="100" r="4"/>
+          <circle cx="600" cy="200" r="4"/>
+          <circle cx="100" cy="300" r="4"/>
+          <circle cx="300" cy="350" r="4"/>
+          <circle cx="500" cy="250" r="4"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ✅ Data packets -->
+    <div class="data-packet" style="top:80%; left:10%; animation-delay: 0s;"></div>
+    <div class="data-packet" style="top:70%; left:20%; animation-delay: 2s;"></div>
+    <div class="data-packet" style="top:90%; left:30%; animation-delay: 4s;"></div>
+
     <div class="hero-content">
       <h1>Cybersecurity with Integrity</h1>
       <p>Protecting organizations with cutting-edge solutions and trusted expertise.</p>
@@ -144,10 +201,9 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.0</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.1</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
-        <!-- LinkedIn SVG Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>
         Connect with us on LinkedIn
       </a>

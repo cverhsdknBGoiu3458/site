@@ -1,4 +1,7 @@
-/* ✨ Base Styles */
+/* ✨ Base Styles - v0.1.3 */
+
+/* NOTE: CSS unchanged for new careers page setup. All HTML changes for link + careers.html creation will happen in index.html. */
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -238,4 +241,4 @@ footer {
   margin-top: 2rem;
 }
 
-/* VERSION 0.1.2 */
+/* VERSION 0.1.3 */

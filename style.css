@@ -1,6 +1,6 @@
-/* ✨ Base Styles - v0.1.7 */
+/* ✨ Base Styles - v0.2.1 */
 
-/* NOTE: Updated to remove unnecessary large blank spaces and smooth out layout */
+/* Updated CSS for upgraded hero section (cyber SVG overlay + data particles) */
 
 body {
   margin: 0;
@@ -36,8 +36,8 @@ header .container {
 }
 
 .logo {
-  height: 60px; /* Increased for horizontal logo */
-  width: auto;  /* Maintain proportions */
+  height: 60px;
+  width: auto;
 }
 
 header nav a {
@@ -122,7 +122,7 @@ header nav a:hover {
 .hero-content h1 {
   font-size: 3rem;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* above network layer */
 }
 
 .cta-btn {
@@ -136,18 +136,53 @@ header nav a:hover {
   margin-top: 20px;
   transition: background 0.3s ease;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .cta-btn:hover {
   background: #009624;
 }
 
+/* ✅ NEW cyber SVG and particle styles */
+.hero-network {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-network svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  animation: floatNetwork 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatNetwork {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-20px); }
+}
+
+.data-packet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00ffcc;
+  border-radius: 50%;
+  animation: dataFlow 8s linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@keyframes dataFlow {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(300px,-300px) scale(0.8); opacity: 0; }
+}
+
 /* 📦 Section Styling */
 .section {
   width: 85%;
   margin: auto;
-  padding: 3rem 0; /* reduced padding to remove excess whitespace */
+  padding: 3rem 0;
   text-align: center;
   opacity: 1 !important;
   transform: none !important;
@@ -229,4 +264,4 @@ footer {
   margin-top: 2rem;
 }
 
-/* VERSION 0.1.7 */
+/* VERSION 0.2.1 */

@@ -33,7 +33,8 @@ header .container {
 }
 
 .logo {
-  height: 50px;
+  height: 60px; /* Increased for horizontal logo */
+  width: auto;  /* Maintain proportions */
 }
 
 header nav a {

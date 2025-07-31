@@ -1,18 +1,24 @@
-<!-- Veracity Cyber GitHub Pages Site -->
-<!-- You can click here anytime to grab the latest index.html version -->
+<!--
+ChatGPT Version Log:
+- 0.1.0 – Initial version tagged
+- 0.1.1 – Added new horizontal logo to the header
+-->
+
+<!-- Veracity Cyber GitHub Pages Site - Version 0.1.1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber</title>
+  <title>Veracity Cyber v0.1.1</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="assets/logo.png" alt="Veracity Cyber Logo" class="logo">
+      <!-- Updated logo -->
+      <img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;">
       <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -25,12 +31,6 @@
 
   <section id="hero">
     <div class="animated-bg"></div>
-    <div class="cyber-icons">
-      <img src="assets/icon-lock.svg" class="icon icon1" alt="Lock Icon">
-      <img src="assets/icon-shield.svg" class="icon icon2" alt="Shield Icon">
-      <img src="assets/icon-code.svg" class="icon icon3" alt="Code Icon">
-      <img src="assets/icon-network.svg" class="icon icon4" alt="Network Icon">
-    </div>
     <div class="hero-content">
       <h1>Cybersecurity with Integrity</h1>
       <p>Protecting organizations with cutting-edge solutions and trusted expertise.</p>
@@ -38,14 +38,14 @@
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section visible">
     <div class="container">
       <h2>About Us</h2>
       <p>Veracity Cyber is dedicated to securing the digital future. We blend innovation with integrity, offering tailored solutions to protect businesses from evolving cyber threats.</p>
     </div>
   </section>
 
-  <section id="services" class="section dark-section">
+  <section id="services" class="section dark-section visible">
     <div class="container">
       <h2>Our Core Competencies</h2>
       <div class="cards">
@@ -69,7 +69,7 @@
     </div>
   </section>
 
-  <section id="benefits" class="section">
+  <section id="benefits" class="section visible">
     <div class="container">
       <h2>Why Work With Us</h2>
       <div class="benefits-grid">
@@ -117,7 +117,7 @@
     </div>
   </section>
 
-  <section id="careers" class="section dark-section">
+  <section id="careers" class="section dark-section visible">
     <div class="container">
       <h2>Join Our Team</h2>
       <p>We’re hiring passionate cybersecurity professionals who want to make a real impact. Help shape the future of digital security with us.</p>
@@ -125,7 +125,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section visible">
     <div class="container">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:info@veracitycyber.com">info@veracitycyber.com</a></p>
@@ -133,7 +133,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved.</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.1.1</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
         <!-- LinkedIn SVG Icon -->
@@ -142,21 +142,5 @@
       </a>
     </p>
   </footer>
-
-  <!-- JS for Scroll Animations -->
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < triggerBottom){
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
 </body>
 </html>

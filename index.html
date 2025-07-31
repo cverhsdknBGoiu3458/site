@@ -10,6 +10,7 @@ ChatGPT Version Log:
 - 0.1.7 – Section padding adjusted
 - 0.1.8 – Prepping index cleanup
 - 0.1.9 – Removed inline min-height from sections
+- 0.2.0 – Logo now links back to main page
 -->
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ ChatGPT Version Log:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.1.9</title>
+  <title>Veracity Cyber v0.2.0</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -27,7 +28,8 @@ ChatGPT Version Log:
 <body>
   <header>
     <div class="container">
-      <img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;">
+      <!-- ✅ Logo now links to main page -->
+      <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;"></a>
       <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -47,7 +49,6 @@ ChatGPT Version Log:
     </div>
   </section>
 
-  <!-- Removed inline min-height from these sections -->
   <section id="about" class="section visible">
     <div class="container">
       <h2>About Us</h2>
@@ -143,7 +144,7 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.1.9</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.0</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
         <!-- LinkedIn SVG Icon -->

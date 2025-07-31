@@ -1,12 +1,10 @@
-/* ✨ NOTE: This is the CSS file. The requested benefit additions must be made in index.html, not here. No CSS changes required for benefit text. */
-
 /* ✨ Base Styles */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: #f4f7fb;
-  color: #222;
+  background: #0a1f44; /* Unified background color */
+  color: #fff; /* switched to white text for better contrast */
 }
 
 h1, h2, h3 {
@@ -50,38 +48,55 @@ header nav a:hover {
   color: #00c853;
 }
 
-/* 🌈 Hero Section */
+/* 🌈 Hero Section - Enhanced Cyber Look */
 #hero {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
   overflow: hidden;
+  background: #000814;
 }
 
-.animated-bg {
+/* Cyber grid background effect */
+#hero::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #0a1f44, #003566, #00c853, #009624);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  background-image: linear-gradient(rgba(0, 255, 170, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 170, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
   z-index: -2;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* glowing animated overlay */
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,200,150,0.3) 0%, transparent 70%);
+  animation: pulseGlow 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  text-shadow: 0 0 10px rgba(0,255,200,0.7);
 }
 
 .cta-btn {
@@ -93,38 +108,19 @@ header nav a:hover {
   border-radius: 8px;
   display: inline-block;
   margin-top: 20px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 12px rgba(0,255,200,0.5);
 }
 
 .cta-btn:hover {
   background: #009624;
+  transform: scale(1.05);
 }
 
-/* 🌐 Floating Cyber Icons */
-.cyber-icons img {
-  position: absolute;
-  width: 60px;
-  opacity: 0.15;
-  animation: float 12s infinite ease-in-out alternate;
-}
+/* remove lame floating icons */
+.cyber-icons { display: none; }
 
-.icon1 { top: 15%; left: 10%; animation-delay: 0s; }
-.icon2 { top: 25%; right: 15%; animation-delay: 2s; }
-.icon3 { bottom: 20%; left: 20%; animation-delay: 4s; }
-.icon4 { bottom: 10%; right: 10%; animation-delay: 6s; }
-
-@keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
-  50% { transform: translateY(-20px) rotate(5deg); opacity: 0.25; }
-  100% { transform: translateY(10px) rotate(-5deg); opacity: 0.2; }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* 📦 Section Styling */
+/* 📦 Section Styling - unify background */
 .section {
   width: 85%;
   margin: auto;
@@ -133,16 +129,14 @@ header nav a:hover {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
+  background: rgba(255,255,255,0.03); /* subtle translucent panel look */
+  border-radius: 12px;
+  margin-top: 2rem;
 }
 
 .section.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.dark-section {
-  background: #0a1f44;
-  color: white;
 }
 
 /* 🏢 Service Cards */
@@ -154,21 +148,17 @@ header nav a:hover {
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dark-section .card {
-  background: #1b2c5c;
-  color: #fff;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 14px rgba(0,255,200,0.4);
 }
 
 /* 🎁 Benefits Grid */
@@ -180,21 +170,22 @@ header nav a:hover {
 }
 
 .benefit {
-  background: white;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .benefit:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 14px rgba(0,255,200,0.4);
 }
 
 /* 🔗 LinkedIn Icon Link */
 footer a[target="_blank"] {
-  color: #0A66C2; /* LinkedIn Blue */
+  color: #0A66C2;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
@@ -203,14 +194,15 @@ footer a[target="_blank"] {
 }
 
 footer a[target="_blank"]:hover {
-  color: #004182; /* darker LinkedIn blue on hover */
+  color: #004182;
 }
 
 /* ⚫ Footer */
 footer {
-  background: #0a1f44;
+  background: rgba(10,31,68, 0.95);
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }

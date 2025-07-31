@@ -99,25 +99,13 @@ header nav a:hover {
 }
 
 /* 🌐 Floating Cyber Icons */
-.cyber-icons {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.icon {
+.cyber-icons img {
   position: absolute;
   width: 60px;
   opacity: 0.15;
-  color: white;
   animation: float 12s infinite ease-in-out alternate;
 }
 
-/* Specific positions for each icon */
 .icon1 { top: 15%; left: 10%; animation-delay: 0s; }
 .icon2 { top: 25%; right: 15%; animation-delay: 2s; }
 .icon3 { bottom: 20%; left: 20%; animation-delay: 4s; }
@@ -129,7 +117,6 @@ header nav a:hover {
   100% { transform: translateY(10px) rotate(-5deg); opacity: 0.2; }
 }
 
-/* ensure hero text stays above */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -141,6 +128,14 @@ header nav a:hover {
   margin: auto;
   padding: 4rem 0;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dark-section {
@@ -149,7 +144,7 @@ header nav a:hover {
 }
 
 /* 🏢 Service Cards */
-.cards {
+cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;

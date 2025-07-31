@@ -1,12 +1,10 @@
-/* FIX: The document here should be CSS, but it currently contains the entire HTML, which caused styling issues. Let's restore proper CSS so sections appear correctly again. */
-
 /* ✨ Base Styles */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: #0a1f44; /* unified dark background */
-  color: #fff;
+  background: #f4f7fb;
+  color: #222;
 }
 
 h1, h2, h3 {
@@ -50,53 +48,38 @@ header nav a:hover {
   color: #00c853;
 }
 
-/* 🌈 Hero Section */
+/* 🌈 Hero Section with Animated Gradient */
 #hero {
   position: relative;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
   overflow: hidden;
-  background: #000814;
 }
 
-#hero::before {
-  content: "";
+.animated-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 255, 170, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 255, 170, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: linear-gradient(-45deg, #0a1f44, #003566, #00c853, #009624);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
   z-index: -2;
 }
 
-#hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0,200,150,0.3) 0%, transparent 70%);
-  animation: pulseGlow 6s ease-in-out infinite;
-  z-index: -1;
-}
-
-@keyframes pulseGlow {
-  0% { opacity: 0.3; }
-  50% { opacity: 0.6; }
-  100% { opacity: 0.3; }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  text-shadow: 0 0 10px rgba(0,255,200,0.7);
+  font-size: 3rem;
 }
 
 .cta-btn {
@@ -108,13 +91,11 @@ header nav a:hover {
   border-radius: 8px;
   display: inline-block;
   margin-top: 20px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 0 12px rgba(0,255,200,0.5);
+  transition: background 0.3s ease;
 }
 
 .cta-btn:hover {
   background: #009624;
-  transform: scale(1.05);
 }
 
 /* 📦 Section Styling */
@@ -126,14 +107,16 @@ header nav a:hover {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
-  background: rgba(255,255,255,0.03);
-  border-radius: 12px;
-  margin-top: 2rem;
 }
 
 .section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.dark-section {
+  background: #0a1f44;
+  color: white;
 }
 
 /* 🏢 Service Cards */
@@ -145,17 +128,21 @@ header nav a:hover {
 }
 
 .card {
-  background: rgba(255,255,255,0.08);
-  color: #fff;
+  background: white;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-section .card {
+  background: #1b2c5c;
+  color: #fff;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,255,200,0.4);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 /* 🎁 Benefits Grid */
@@ -167,22 +154,21 @@ header nav a:hover {
 }
 
 .benefit {
-  background: rgba(255,255,255,0.08);
-  color: #fff;
+  background: white;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .benefit:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,255,200,0.4);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 /* 🔗 LinkedIn Icon Link */
 footer a[target="_blank"] {
-  color: #0A66C2;
+  color: #0A66C2; /* LinkedIn Blue */
   font-weight: bold;
   display: inline-flex;
   align-items: center;
@@ -191,15 +177,14 @@ footer a[target="_blank"] {
 }
 
 footer a[target="_blank"]:hover {
-  color: #004182;
+  color: #004182; /* darker LinkedIn blue on hover */
 }
 
 /* ⚫ Footer */
 footer {
-  background: rgba(10,31,68, 0.95);
+  background: #0a1f44;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
 }

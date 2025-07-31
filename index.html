@@ -1,3 +1,5 @@
+<!-- Veracity Cyber GitHub Pages Site -->
+<!-- You can click here anytime to grab the latest index.html version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- 🔵 Header -->
   <header>
     <div class="container">
       <img src="assets/logo.png" alt="Veracity Cyber Logo" class="logo">
@@ -22,28 +23,21 @@
     </div>
   </header>
 
-  <!-- 🌈 Hero Section -->
-<section id="hero">
-  <div class="animated-bg"></div>
+  <section id="hero">
+    <div class="animated-bg"></div>
+    <div class="cyber-icons">
+      <img src="assets/icon-lock.svg" class="icon icon1" alt="Lock Icon">
+      <img src="assets/icon-shield.svg" class="icon icon2" alt="Shield Icon">
+      <img src="assets/icon-code.svg" class="icon icon3" alt="Code Icon">
+      <img src="assets/icon-network.svg" class="icon icon4" alt="Network Icon">
+    </div>
+    <div class="hero-content">
+      <h1>Cybersecurity with Integrity</h1>
+      <p>Protecting organizations with cutting-edge solutions and trusted expertise.</p>
+      <a href="#contact" class="cta-btn">Work With Us</a>
+    </div>
+  </section>
 
-  <!-- ✨ Floating Cyber Icons -->
-<div class="cyber-icons">
-  <img src="assets/icon-lock.svg" class="icon icon1" alt="Lock Icon">
-  <img src="assets/icon-shield.svg" class="icon icon2" alt="Shield Icon">
-  <img src="assets/icon-code.svg" class="icon icon3" alt="Code Icon">
-  <img src="assets/icon-network.svg" class="icon icon4" alt="Network Icon">
-</div>
-
-
-  <div class="hero-content">
-    <h1>Cybersecurity with Integrity</h1>
-    <p>Protecting organizations with cutting-edge solutions and trusted expertise.</p>
-    <a href="#contact" class="cta-btn">Work With Us</a>
-  </div>
-</section>
-
-
-  <!-- 🏢 About Section -->
   <section id="about" class="section">
     <div class="container">
       <h2>About Us</h2>
@@ -51,7 +45,6 @@
     </div>
   </section>
 
-  <!-- 💼 Services Section -->
   <section id="services" class="section dark-section">
     <div class="container">
       <h2>Our Core Competencies</h2>
@@ -76,7 +69,6 @@
     </div>
   </section>
 
-  <!-- 🎁 Benefits Section -->
   <section id="benefits" class="section">
     <div class="container">
       <h2>Why Work With Us</h2>
@@ -97,7 +89,6 @@
     </div>
   </section>
 
-  <!-- 🌟 Careers -->
   <section id="careers" class="section dark-section">
     <div class="container">
       <h2>Join Our Team</h2>
@@ -106,7 +97,6 @@
     </div>
   </section>
 
-  <!-- 📬 Contact -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Contact</h2>
@@ -114,26 +104,24 @@
     </div>
   </section>
 
-  <!-- ⚫ Footer -->
   <footer>
     <p>© 2025 Veracity Cyber. All Rights Reserved.</p>
   </footer>
+
+  <!-- JS for Scroll Animations -->
   <script>
-  const sections = document.querySelectorAll('.section');
-
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if(sectionTop < triggerBottom){
-        section.classList.add('visible');
-      }
-    });
-  };
-
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // run on page load
-</script>
-
+    const sections = document.querySelectorAll('.section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom){
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>

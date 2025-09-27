@@ -12,6 +12,9 @@ ChatGPT Version Log:
 - 0.1.9 – Removed inline min-height from sections
 - 0.2.0 – Logo now links back to main page
 - 0.2.1 – Hero section upgraded with cyber network overlay and data particles
+- 0.2.2 – Removed inline hero CSS and moved styling to style.css
+- 0.2.6 – Renamed sections, updated Services(DataOps) card, anchor offset handled in CSS
+- 0.2.6+ – Added nav tooltips via title attributes (labels unchanged)
 -->
 
 <!DOCTYPE html>
@@ -19,40 +22,11 @@ ChatGPT Version Log:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.2.1</title>
+  <title>Veracity Cyber v0.2.6</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    .hero-network {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .hero-network svg {
-      width: 100%;
-      height: 100%;
-      opacity: 0.6;
-      animation: floatNetwork 12s ease-in-out infinite alternate;
-    }
-    @keyframes floatNetwork {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-20px); }
-    }
-    .data-packet {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #00ffcc;
-      border-radius: 50%;
-      animation: dataFlow 8s linear infinite;
-      opacity: 0.7;
-    }
-    @keyframes dataFlow {
-      0% { transform: translate(0,0) scale(1); opacity: 1; }
-      100% { transform: translate(300px,-300px) scale(0.8); opacity: 0; }
-    }
   </style>
 </head>
 <body>
@@ -60,11 +34,11 @@ ChatGPT Version Log:
     <div class="container">
       <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;"></a>
       <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#benefits">Benefits</a>
-        <a href="careers.html">Careers</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" title="About Us">About</a>
+        <a href="#services" title="Our Expertise">Services</a>
+        <a href="#benefits" title="Our Benefits">Benefits</a>
+        <a href="careers.html" title="Careers at Veracity">Careers</a>
+        <a href="#contact" title="Contact Us">Contact</a>
       </nav>
     </div>
   </header>
@@ -72,7 +46,7 @@ ChatGPT Version Log:
   <section id="hero">
     <div class="animated-bg"></div>
 
-    <!-- ✅ NEW SVG overlay for cyber network feel -->
+    <!-- Cyber network overlay -->
     <div class="hero-network">
       <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
         <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
@@ -94,7 +68,7 @@ ChatGPT Version Log:
       </svg>
     </div>
 
-    <!-- ✅ Data packets -->
+    <!-- Data packets -->
     <div class="data-packet" style="top:80%; left:10%; animation-delay: 0s;"></div>
     <div class="data-packet" style="top:70%; left:20%; animation-delay: 2s;"></div>
     <div class="data-packet" style="top:90%; left:30%; animation-delay: 4s;"></div>
@@ -115,11 +89,11 @@ ChatGPT Version Log:
 
   <section id="services" class="section dark-section visible">
     <div class="container">
-      <h2>Our Core Competencies</h2>
+      <h2>Our Expertise</h2>
       <div class="cards">
         <div class="card">
-          <h3>🔒 Security Assessments</h3>
-          <p>Deep-dive evaluations to uncover and fix vulnerabilities before attackers do.</p>
+          <h3>🧠 DataOps</h3>
+          <p>We don’t just move data around. We transform, enrich, normalize, and make data usable. We’re experts with tools like NiFi and Cribl.</p>
         </div>
         <div class="card">
           <h3>🛡 Compliance</h3>
@@ -139,7 +113,7 @@ ChatGPT Version Log:
 
   <section id="benefits" class="section visible">
     <div class="container">
-      <h2>Why Work With Us</h2>
+      <h2>Our Benefits</h2>
       <div class="benefits-grid">
         <div class="benefit">
           <h3>🎉 11 Paid Holidays</h3>
@@ -195,13 +169,13 @@ ChatGPT Version Log:
 
   <section id="contact" class="section visible">
     <div class="container">
-      <h2>Contact</h2>
+      <h2>Contact Us</h2>
       <p>Email: <a href="mailto:info@veracitycyber.com">info@veracitycyber.com</a></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.1</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.6</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>

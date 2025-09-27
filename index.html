@@ -1,88 +1,76 @@
 <!--
 ChatGPT Version Log:
-- 0.1.0 – Initial version tagged
-- 0.1.1 – Added new horizontal logo to the header
-- 0.1.2 – Cyber animated hero background
-- 0.1.3 – Careers page link created
-- 0.1.4 – Careers nav link points to careers.html
-- 0.1.5 – Fixed anchor navigation to About, Services, Benefits
-- 0.1.6 – CSS improvements for visibility
-- 0.1.7 – Section padding adjusted
-- 0.1.8 – Prepping index cleanup
-- 0.1.9 – Removed inline min-height from sections
-- 0.2.0 – Logo now links back to main page
-- 0.2.1 – Hero section upgraded with cyber network overlay and data particles
-- 0.2.2 – Removed inline hero CSS and moved styling to style.css
-- 0.2.6 – Renamed sections, updated Services(DataOps) card, anchor offset handled in CSS
-- 0.2.6+ – Added nav tooltips via title attributes (labels unchanged)
-- 0.2.6+ (A) – Careers nav links to #careers instead of careers.html
-- 0.2.7 – Copy updates across About & Services, stored as new version
+- 0.3.0 – Reimagined hero (bold wordmark, complex cyber background). Sections unchanged.
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.2.7</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veracity Cyber v0.3.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
   <header>
     <div class="container">
-      <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" style="height:60px;"></a>
+      <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" /></a>
       <nav>
         <a href="#about" title="About Us">About</a>
         <a href="#services" title="Our Expertise">Services</a>
         <a href="#benefits" title="Our Benefits">Benefits</a>
-        <!-- Careers now anchors to on-page section -->
         <a href="#careers" title="Careers at Veracity">Careers</a>
         <a href="#contact" title="Contact Us">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- ================= HERO v3 ================= -->
   <section id="hero">
-    <div class="animated-bg"></div>
+    <div class="hero-stage hero-gradient"></div>
+    <div class="hero-stage hero-aurora"></div>
+    <div class="hero-stage hero-hex"></div>
+    <div class="hero-stage hero-scan hero-beams"></div>
 
-    <!-- Cyber network overlay -->
-    <div class="hero-network">
-      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-        <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
-          <line x1="50" y1="100" x2="200" y2="150"/>
-          <line x1="200" y1="150" x2="400" y2="100"/>
-          <line x1="400" y1="100" x2="600" y2="200"/>
-          <line x1="100" y1="300" x2="300" y2="350"/>
-          <line x1="300" y1="350" x2="500" y2="250"/>
-        </g>
-        <g fill="rgba(255,255,255,0.4)">
-          <circle cx="50" cy="100" r="4"/>
-          <circle cx="200" cy="150" r="4"/>
-          <circle cx="400" cy="100" r="4"/>
-          <circle cx="600" cy="200" r="4"/>
-          <circle cx="100" cy="300" r="4"/>
-          <circle cx="300" cy="350" r="4"/>
-          <circle cx="500" cy="250" r="4"/>
-        </g>
-      </svg>
+    <!-- ambient particles -->
+    <div class="hero-stage">
+      <div class="hero-particle" style="top:78%;left:10%"></div>
+      <div class="hero-particle p2" style="top:72%;left:22%"></div>
+      <div class="hero-particle p3" style="top:88%;left:34%"></div>
     </div>
 
-    <!-- Data packets -->
-    <div class="data-packet" style="top:80%; left:10%; animation-delay: 0s;"></div>
-    <div class="data-packet" style="top:70%; left:20%; animation-delay: 2s;"></div>
-    <div class="data-packet" style="top:90%; left:30%; animation-delay: 4s;"></div>
-
-    <div class="hero-content">
-      <h1>Cybersecurity with Integrity</h1>
-      <p>Protecting organizations with cutting-edge solutions and trusted expertise.</p>
-      <a href="careers.html" class="cta-btn">See Open Roles</a>
+    <!-- Wordmark lockup (SVG text ensures crisp stroke + gradient fill) -->
+    <div class="hero-lockup" aria-label="Veracity Cyber">
+      <div class="wordmark">
+        <svg viewBox="0 0 1600 360" role="img" aria-label="Veracity Cyber">
+          <defs>
+            <linearGradient id="wmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00ffc8"/>
+              <stop offset="35%" stop-color="#00b4ff"/>
+              <stop offset="70%" stop-color="#00c853"/>
+              <stop offset="100%" stop-color="#00ffc8"/>
+            </linearGradient>
+            <filter id="wmGlow">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#wmGlow)">
+            <text x="50" y="220" font-family="Inter, system-ui, sans-serif" font-size="180" font-weight="900" letter-spacing="8" fill="url(#wmGrad)" stroke="rgba(255,255,255,.35)" stroke-width="2">VERACITY</text>
+            <text x="50" y="320" font-family="Inter, system-ui, sans-serif" font-size="120" font-weight="800" letter-spacing="6" fill="url(#wmGrad)" opacity="0.95">CYBER</text>
+          </g>
+        </svg>
+      </div>
+      <p class="hero-tag">Modern defense. True to the mission.</p>
+      <div class="cta-row">
+        <a href="careers.html" class="cta-btn">See Open Roles</a>
+        <a href="#services" class="cta-btn" style="background:#0a66c2">Explore Services</a>
+      </div>
     </div>
   </section>
 
+  <!-- =============== MAIN SECTIONS (copied from v0.2.7) =============== -->
   <section id="about" class="section visible">
     <div class="container">
       <h2>About Us</h2>
@@ -107,7 +95,7 @@ ChatGPT Version Log:
           <p>Our Cloud &amp; DevOps engineers build scalable, secure solutions in AWS—containerizing services with Docker, orchestrating them on Kubernetes, and automating configuration and deployments with Ansible.</p>
         </div>
         <div class="card">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px; vertical-align:-3px"><path d="M9 2h6a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2V4a2 2 0 0 1 2-2Zm6 2H9v2h6V4ZM7 8H5v8h2V8Zm12 0h-2v8h2V8Zm-4 10v2H9v-2h6Z"/></svg>Full Spectrum Cyber</h3>
+          <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="vertical-align:-4px;margin-right:6px"><path d="M9 2h6a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2V4a2 2 0 0 1 2-2Zm6 2H9v2h6V4ZM7 8H5v8h2V8Zm12 0h-2v8h2V8Zm-4 10v2H9v-2h6Z"/></svg>Full Spectrum Cyber</h3>
           <p>From operating systems to embedded devices, we design, write, and audit low-level code and build custom defensive tooling—delivering verifiable security where it matters most, closest to the metal.</p>
         </div>
       </div>
@@ -118,46 +106,16 @@ ChatGPT Version Log:
     <div class="container">
       <h2>Our Benefits</h2>
       <div class="benefits-grid">
-        <div class="benefit">
-          <h3>🎉 11 Paid Holidays</h3>
-          <p>Generous time off to rest and recharge.</p>
-        </div>
-        <div class="benefit">
-          <h3>💰 12% 401(k)</h3>
-          <p>One of the best retirement matches in the industry.</p>
-        </div>
-        <div class="benefit">
-          <h3>🏖 4 Weeks PTO</h3>
-          <p>We believe in balance — you earn plenty of vacation time.</p>
-        </div>
-        <div class="benefit">
-          <h3>💻 Annual Tech Bonus</h3>
-          <p>$1500 to keep you current with the latest tech.</p>
-        </div>
-        <div class="benefit">
-          <h3>🩺 Healthcare</h3>
-          <p>100% company paid CareFirst medical, dental, and vision. $10k medical opt-out.</p>
-        </div>
-        <div class="benefit">
-          <h3>🏦 HSA</h3>
-          <p>Company funded, employee-owned Health Savings Account (HSA).</p>
-        </div>
-        <div class="benefit">
-          <h3>🛡 Life & Disability Insurance</h3>
-          <p>100% company paid life insurance and both short and long term disability insurance.</p>
-        </div>
-        <div class="benefit">
-          <h3>👶 Parental Benefits</h3>
-          <p>Company paid birth recovery, parental leave, adoption leave, and adoption assistance.</p>
-        </div>
-        <div class="benefit">
-          <h3>🎁 Referral Bonuses</h3>
-          <p>Competitive referral bonuses when you bring great candidates to our team.</p>
-        </div>
-        <div class="benefit">
-          <h3>🔒 Retention Bonuses</h3>
-          <p>$5k bonus on your 5 year anniversary. $10k at 10 years.</p>
-        </div>
+        <div class="benefit"><h3>🎉 11 Paid Holidays</h3><p>Generous time off to rest and recharge.</p></div>
+        <div class="benefit"><h3>💰 12% 401(k)</h3><p>One of the best retirement matches in the industry.</p></div>
+        <div class="benefit"><h3>🏖 4 Weeks PTO</h3><p>We believe in balance — you earn plenty of vacation time.</p></div>
+        <div class="benefit"><h3>💻 Annual Tech Bonus</h3><p>$1500 to keep you current with the latest tech.</p></div>
+        <div class="benefit"><h3>🩺 Healthcare</h3><p>100% company paid CareFirst medical, dental, and vision. $10k medical opt-out.</p></div>
+        <div class="benefit"><h3>🏦 HSA</h3><p>Company funded, employee-owned Health Savings Account (HSA).</p></div>
+        <div class="benefit"><h3>🛡 Life & Disability Insurance</h3><p>100% company paid life insurance and both short and long term disability insurance.</p></div>
+        <div class="benefit"><h3>👶 Parental Benefits</h3><p>Company paid birth recovery, parental leave, adoption leave, and adoption assistance.</p></div>
+        <div class="benefit"><h3>🎁 Referral Bonuses</h3><p>Competitive referral bonuses when you bring great candidates to our team.</p></div>
+        <div class="benefit"><h3>🔒 Retention Bonuses</h3><p>$5k bonus on your 5 year anniversary. $10k at 10 years.</p></div>
       </div>
     </div>
   </section>
@@ -178,9 +136,9 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.7</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.3.0</p>
     <p>
-      <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
+      <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:6px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>
         Connect with us on LinkedIn
       </a>

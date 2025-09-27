@@ -1,4 +1,4 @@
-/* ✨ Veracity Cyber Styles — v0.2.4 (hero ++ aurora + scanlines + refined cyber grid) */
+/* ✨ Veracity Cyber Styles — v0.2.5 (anchor offset + hero++) */
 
 /* Global */
 :root{
@@ -10,6 +10,7 @@
   --accent: #00c853;      /* brand green */
   --accent-darker:#009624;/* hover */
   --divider: rgba(255,255,255,0.06);
+  --header-offset: 96px;  /* sticky header height for anchor offset */
 }
 
 * { box-sizing: border-box; }
@@ -37,6 +38,9 @@ header .container { display: flex; justify-content: space-between; align-items: 
 .logo { height: 60px; width: auto; }
 header nav a{ color: var(--text); margin: 0 12px; text-decoration: none; font-weight: 600; transition: color .25s, opacity .25s; opacity: .9; }
 header nav a:hover{ color: var(--accent); opacity: 1; }
+
+/* Anchor offset for sticky header */
+#about, #services, #benefits, #careers, #contact, .section { scroll-margin-top: var(--header-offset); }
 
 /* =========================
    HERO (cooler visuals)
@@ -137,7 +141,7 @@ header nav a:hover{ color: var(--accent); opacity: 1; }
 
 /* Footer */
 footer{ background: rgba(7,20,38,.9); color:var(--text); text-align:center; padding:1rem; margin-top:2rem; border-top:1px solid var(--divider); }
-footer a[target="_blank"]{ color:#0A66C2; font-weight:700; display:inline-flex; align-items:center; gap:6px; transition: color .25s, opacity .25s; opacity:.9; }
+footer a[target="_blank"]{ color:#0A66C2; font-weight:700; display:inline-flex; align-items: center; gap:6px; transition: color .25s, opacity .25s; opacity:.9; }
 footer a[target="_blank"]:hover{ color:#004182; opacity:1; }
 
-/* END — v0.2.4 */
+/* END — v0.2.5 */

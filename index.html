@@ -16,6 +16,7 @@ ChatGPT Version Log:
 - 0.2.6 – Renamed sections, updated Services(DataOps) card, anchor offset handled in CSS
 - 0.2.6+ – Added nav tooltips via title attributes (labels unchanged)
 - 0.2.6+ (A) – Careers nav links to #careers instead of careers.html
+- 0.2.7 – Copy updates across About & Services, stored as new version
 -->
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ ChatGPT Version Log:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veracity Cyber v0.2.6</title>
+  <title>Veracity Cyber v0.2.7</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -38,7 +39,7 @@ ChatGPT Version Log:
         <a href="#about" title="About Us">About</a>
         <a href="#services" title="Our Expertise">Services</a>
         <a href="#benefits" title="Our Benefits">Benefits</a>
-        <!-- 🔁 Changed this to anchor to the on-page section -->
+        <!-- Careers now anchors to on-page section -->
         <a href="#careers" title="Careers at Veracity">Careers</a>
         <a href="#contact" title="Contact Us">Contact</a>
       </nav>
@@ -85,7 +86,7 @@ ChatGPT Version Log:
   <section id="about" class="section visible">
     <div class="container">
       <h2>About Us</h2>
-      <p>Veracity Cyber is dedicated to securing the digital future. We blend innovation with integrity, offering tailored solutions to protect businesses from evolving cyber threats.</p>
+      <p>Veracity Cyber is dedicated to securing the digital future. We blend technology expertise with integrity, offering tailored solutions to protect our customers from evolving cyber threats.</p>
     </div>
   </section>
 
@@ -95,19 +96,19 @@ ChatGPT Version Log:
       <div class="cards">
         <div class="card">
           <h3>🧠 DataOps</h3>
-          <p>We don’t just move data around. We transform, enrich, normalize, and make data usable. We’re experts with tools like NiFi and Cribl.</p>
+          <p>We don’t just move data around. We transform, enrich, normalize, and make data usable. We’re experts with tools like NiFi, Splunk, Elasticsearch, and Cribl.</p>
         </div>
         <div class="card">
-          <h3>🛡 Compliance</h3>
-          <p>Helping businesses achieve and maintain NIST, CMMC, and ISO 27001 compliance.</p>
+          <h3>🛡 Data Analytics &amp; Governance</h3>
+          <p>At Veracity, we “find the truth in data” by unifying sources, automating governance, and delivering analytics you can act on. From lineage and catalogs to policy enforcement and secure sharing, we make data reliable, compliant, and ready for mission decisions.</p>
         </div>
         <div class="card">
-          <h3>🌐 Cloud & Network Security</h3>
-          <p>Architecting resilient cloud and network environments for modern enterprises.</p>
+          <h3>🌐 Cloud &amp; DevOps</h3>
+          <p>Our Cloud &amp; DevOps engineers build scalable, secure solutions in AWS—containerizing services with Docker, orchestrating them on Kubernetes, and automating configuration and deployments with Ansible.</p>
         </div>
         <div class="card">
-          <h3>🚨 Incident Response</h3>
-          <p>24/7 support to detect, respond, and recover from cyber incidents.</p>
+          <h3>🚨 Full Spectrum Cyber</h3>
+          <p>From operating systems to embedded devices, we design, write, and audit low-level code and build custom defensive tooling—delivering verifiable security where it matters most, closest to the metal.</p>
         </div>
       </div>
     </div>
@@ -177,7 +178,7 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.6</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.2.7</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>

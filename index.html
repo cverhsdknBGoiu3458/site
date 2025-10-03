@@ -6,13 +6,14 @@ ChatGPT Version Log:
 - 0.3.3 – Mobile header + hamburger
 - 0.3.4 – Mobile polish: removed "Menu" label; auto-close menu on link click
 - 0.3.5 – Benefits copy updates (401k, PTO, Tech Bonus)
+- 0.3.6 – Footer: partner logos row (Splunk, Cisco, SAP)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veracity Cyber v0.3.5</title>
+  <title>Veracity Cyber v0.3.6</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -22,23 +23,23 @@ ChatGPT Version Log:
     @media (max-width: 860px){
       .nav-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--divider);border-radius:10px;background:transparent;color:var(--text);cursor:pointer}
       .nav-toggle svg{width:22px;height:22px}
-      /* Ensure anchors don't hide under sticky header on mobile */
       #about,#services,#benefits,#careers,#contact,.section{scroll-margin-top:120px}
     }
+
+    /* Partner logos row */
+    .partners{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;margin:10px auto 0;padding-top:10px;border-top:1px solid var(--divider);max-width:92%}
+    .partners .label{opacity:.8;font-weight:700;margin-right:8px}
+    .partners img{height:28px;width:auto;opacity:.9;transition:opacity .2s,transform .2s;filter:none}
+    .partners img:hover{opacity:1;transform:translateY(-1px)}
   </style>
 </head>
 <body>
   <header id="site-header">
     <div class="container" style="position:relative;gap:10px">
       <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" /></a>
-
-      <!-- Hamburger (no text label) -->
       <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
       </button>
-
       <nav id="primary-nav">
         <a href="#about" title="About Us">About</a>
         <a href="#services" title="Our Expertise">Services</a>
@@ -55,13 +56,11 @@ ChatGPT Version Log:
     <div class="hero-stage hero-aurora"></div>
     <div class="hero-stage hero-hex"></div>
     <div class="hero-stage hero-scan hero-beams"></div>
-
     <div class="hero-stage">
       <div class="hero-particle" style="top:78%;left:10%"></div>
       <div class="hero-particle p2" style="top:72%;left:22%"></div>
       <div class="hero-particle p3" style="top:88%;left:34%"></div>
     </div>
-
     <div class="hero-lockup" aria-label="Veracity Cyber">
       <div class="wordmark">
         <img src="assets/Horizontal - Transparent - Cropped - Inverted.png" alt="VERACITY wordmark" />
@@ -140,8 +139,15 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.3.5</p>
-    <p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.3.6</p>
+    <div class="partners" aria-label="Partner companies">
+      <span class="label">Partners:</span>
+      <!-- Replace these src paths with the official brand SVGs you place in your repo -->
+      <img src="assets/partners/splunk.svg" alt="Splunk" title="Splunk" />
+      <img src="assets/partners/cisco.svg" alt="Cisco" title="Cisco" />
+      <img src="assets/partners/sap.svg" alt="SAP" title="SAP" />
+    </div>
+    <p style="margin-top:10px">
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:6px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>
         Connect with us on LinkedIn

@@ -1,28 +1,43 @@
 <!--
 ChatGPT Version Log:
-- 0.3.0 – Reimagined hero (bold wordmark, complex cyber background). Sections unchanged.
+- 0.3.0 – Reimagined hero (bold wordmark, complex cyber background)
 - 0.3.1 – Hero wordmark switched to provided VERACITY logo image
 - 0.3.2 – Updated “Join Our Team” copy in careers section
+- 0.3.3 – Mobile header: responsive logo + accessible hamburger menu
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veracity Cyber v0.3.2</title>
+  <title>Veracity Cyber v0.3.3</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     html{scroll-behavior:smooth}
-    /* Ensure the provided logo scales like the previous SVG wordmark */
     .wordmark img{width:min(1000px,90vw);height:auto;display:block;margin:0 auto}
+    /* Minimal header tweaks specific to this HTML version (full rules live in style.css v0.3.2) */
+    .nav-toggle{display:none}
+    @media (max-width: 860px){
+      .nav-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--divider);border-radius:10px;background:transparent;color:var(--text);cursor:pointer}
+      .nav-toggle svg{width:22px;height:22px}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container" style="position:relative;gap:10px">
       <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" /></a>
-      <nav>
+
+      <!-- Accessible hamburger button for mobile -->
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+        </svg>
+        <span class="nav-text" style="font-weight:700">Menu</span>
+      </button>
+
+      <nav id="primary-nav">
         <a href="#about" title="About Us">About</a>
         <a href="#services" title="Our Expertise">Services</a>
         <a href="#benefits" title="Our Benefits">Benefits</a>
@@ -32,21 +47,19 @@ ChatGPT Version Log:
     </div>
   </header>
 
-  <!-- ================= HERO v3 ================= -->
+  <!-- ================= HERO ================= -->
   <section id="hero">
     <div class="hero-stage hero-gradient"></div>
     <div class="hero-stage hero-aurora"></div>
     <div class="hero-stage hero-hex"></div>
     <div class="hero-stage hero-scan hero-beams"></div>
 
-    <!-- ambient particles -->
     <div class="hero-stage">
       <div class="hero-particle" style="top:78%;left:10%"></div>
       <div class="hero-particle p2" style="top:72%;left:22%"></div>
       <div class="hero-particle p3" style="top:88%;left:34%"></div>
     </div>
 
-    <!-- Wordmark lockup using the provided logo image -->
     <div class="hero-lockup" aria-label="Veracity Cyber">
       <div class="wordmark">
         <img src="assets/Horizontal - Transparent - Cropped - Inverted.png" alt="VERACITY wordmark" />
@@ -125,7 +138,7 @@ ChatGPT Version Log:
   </section>
 
   <footer>
-    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.3.2</p>
+    <p>© 2025 Veracity Cyber. All Rights Reserved. | Version 0.3.3</p>
     <p>
       <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:6px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>
@@ -133,5 +146,25 @@ ChatGPT Version Log:
       </a>
     </p>
   </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        document.body.classList.toggle('nav-open', !expanded);
+      });
+      // Reset on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) {
+          document.body.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -22,10 +22,14 @@ ChatGPT Version Log:
       .nav-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--divider);border-radius:10px;background:transparent;color:var(--text);cursor:pointer}
       .nav-toggle svg{width:22px;height:22px}
     }
+      /* Ensure anchors don't hide under sticky header on mobile */
+    @media (max-width: 860px){
+      #about,#services,#benefits,#careers,#contact,.section{scroll-margin-top:120px}
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header id="site-header">
     <div class="container" style="position:relative;gap:10px">
       <a href="index.html"><img src="assets/Horizontal - Transparent.png" alt="Veracity Cyber Logo" class="logo" /></a>
 
@@ -164,7 +168,20 @@ ChatGPT Version Log:
         document.body.classList.toggle('nav-open', !expanded);
       });
 
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeMenu, 0)));
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+        // Smooth-scroll with header offset so titles aren't hidden under sticky header
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          const header = document.getElementById('site-header');
+          if (target && header) {
+            e.preventDefault();
+            const y = target.getBoundingClientRect().top + window.pageYOffset - (header.offsetHeight + 12);
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+        setTimeout(closeMenu, 0);
+      }));
 
       window.addEventListener('resize', () => {
         if (window.innerWidth > 860) closeMenu();

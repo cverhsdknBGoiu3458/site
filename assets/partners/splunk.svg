@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 191.8 73.1" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 191.8 73.1" style="enable-background:new 0 0 191.8 73.1;fill:#FFFFFF;fill-opacity:1" xml:space="preserve" color="#FFFFFF">
 <style type="text/css">
 	.st0{fill:#1A1818;}
 	.st1{fill:#FFFFFF;}
@@ -32,4 +32,7 @@
 		</g>
 	</g>
 </g>
-</svg>
+<style type="text/css">
+* { fill: #FFFFFF !important; stroke: #FFFFFF !important; }
+#background, .background, .bg { fill: none !important; stroke: none !important; }
+</style></svg>

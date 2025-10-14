@@ -17,18 +17,19 @@ ChatGPT Version Log:
 - 0.4.4 – Updated About Us section content (partial)
 - 0.4.5 – Full file restore with new About Us content
 - 0.4.6 – About spacing + bold; Governance phrasing; version sync
-- 0.4.7 – Attempted centered tiles (services & benefits)
-- 0.4.8 – Grid centering attempt + Splunk spacing tweak
-- 0.4.9 – Fixed-width grid centering + refined Splunk spacing
+- 0.4.7 – Center-wrapped tiles (services & benefits) so rows align to the middle
+- 0.4.8 – Robust centered tiles (grid) + partner logo spacing tweak (Splunk)
+- 0.4.9 – True centered wrap (fixed-width CSS grid) + refined Splunk spacing
 - 0.5.0 – REVERT: restore original tile behavior & partner spacing; remove Splunk nudge
 - 0.5.1 – Adjust Splunk logo right alignment for even spacing
+- 0.5.2 – Contact: replace plain email with "Email Us" button + icon
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veracity Cyber v0.5.1</title>
+  <title>Veracity Cyber v0.5.2</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -53,11 +54,12 @@ ChatGPT Version Log:
     .partners{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
     .partners img{display:block;height:44px;width:auto;opacity:.95;transition:opacity .2s,transform .2s}
     .partners img:hover{opacity:1;transform:translateY(-1px)}
-
-    /* IMPORTANT: remove experimental tile-centering rules so base CSS applies again */
-    /* (no overrides for .cards, .cards .card, .benefits-grid here) */
-      /* Nudge Splunk logo slightly right to visually center spacing */
+    /* Splunk SVG optical alignment tweak */
     .partners img[alt="Splunk"]{transform:translateX(12px)}
+
+    /* Email button in Contact */
+    .email-btn{display:inline-flex;align-items:center;gap:8px}
+    .email-btn svg{width:18px;height:18px}
   </style>
 </head>
 <body>
@@ -169,7 +171,12 @@ ChatGPT Version Log:
   <section id="contact" class="section visible">
     <div class="container">
       <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:info@veracitycyber.com">info@veracitycyber.com</a></p>
+      <p>
+        <a href="mailto:info@veracitycyber.com" class="cta-btn email-btn" aria-label="Email us at info@veracitycyber.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.236l7.386 6.155a1 1 0 0 0 1.228 0L20 8.236V18H4Z"/></svg>
+          Email Us
+        </a>
+      </p>
       <p style="margin-top:10px">
         <a href="https://www.linkedin.com/company/veracitycyber" target="_blank" style="color:#00c853;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:6px;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.967 0 1.75.79 1.75 1.764s-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.865-3.061-1.868 0-2.155 1.46-2.155 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.561 2.838-1.561 3.035 0 3.59 2.001 3.59 4.601v5.593z"/></svg>
@@ -190,7 +197,7 @@ ChatGPT Version Log:
           <img src="assets/partners/sap.svg" alt="SAP" title="SAP" />
         </div>
       </div>
-      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.5.1</p>
+      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.5.2</p>
     </div>
   </footer>
 
@@ -233,4 +240,3 @@ ChatGPT Version Log:
   </script>
 </body>
 </html>
-

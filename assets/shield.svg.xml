@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Veracity Shield">
+  <defs>
+    <style>
+      .navy{fill:#1f2942}
+      .green{fill:#0a6b3e}
+    </style>
+  </defs>
+
+  <!-- Background is transparent on purpose for favicons -->
+
+  <!-- Left navy arc of the shield (stylized V wing) -->
+  <path class="navy" d="M140 86
+    C 170 210, 250 370, 420 640
+    C 520 800, 520 800, 512 930
+    C 360 820, 260 720, 190 620
+    C 110 505, 80 405, 80 300
+    C 80 240, 95 172, 140 86 Z"/>
+
+  <!-- Right navy arc (mirror) -->
+  <path class="navy" d="M884 86
+    C 934 172, 944 240, 944 300
+    C 944 405, 914 505, 834 620
+    C 764 720, 664 820, 512 930
+    C 504 800, 504 800, 604 640
+    C 774 370, 854 210, 884 86 Z"/>
+
+  <!-- Green inverted triangle at top center -->
+  <polygon class="green" points="312,140 712,140 512,430"/>
+</svg>

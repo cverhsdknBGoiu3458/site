@@ -12,13 +12,15 @@ ChatGPT Version Log:
 - 0.3.9 – Splunk logo on white badge in footer; minor footer polish
 - 0.4.0 – Tagline changed
 - 0.4.1 – Full file restored with all sections/styles/hooks; keeps new tagline
+- 0.4.2 – Removed Splunk white badge (SVG now styled natively); minor cleanup
+- 0.4.3 – Clean header comment; removed $1/$2 artifacts; version sync
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veracity Cyber v0.4.1</title>
+  <title>Veracity Cyber v0.4.3</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -43,8 +45,6 @@ ChatGPT Version Log:
     .partners{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
     .partners img{height:44px;width:auto;opacity:.95;transition:opacity .2s,transform .2s}
     .partners img:hover{opacity:1;transform:translateY(-1px)}
-    /* White badge for transparent SVGs (Splunk) */
-    .partners img.partner-badge{background:#fff;border-radius:10px;padding:6px 10px;box-shadow:0 1px 0 rgba(0,0,0,.2) inset,0 4px 12px rgba(0,0,0,.25)}
   </style>
 </head>
 <body>
@@ -170,12 +170,12 @@ ChatGPT Version Log:
         <span class="label">Technology Partners:</span>
         <div class="partners">
           <!-- Replace with your official brand SVGs placed in the repo -->
-          <img class="partner-badge" src="assets/partners/splunk.svg" alt="Splunk" title="Splunk" />
+          <img src="assets/partners/splunk.svg" alt="Splunk" title="Splunk" />
           <img src="assets/partners/cisco.svg" alt="Cisco" title="Cisco" />
           <img src="assets/partners/sap.svg" alt="SAP" title="SAP" />
         </div>
       </div>
-      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.4.1</p>
+      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.4.3</p>
     </div>
   </footer>
 

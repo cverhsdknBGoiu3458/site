@@ -18,13 +18,14 @@ ChatGPT Version Log:
 - 0.4.5 – Full file restore with new About Us content
 - 0.4.6 – About spacing + bold; Governance phrasing; version sync
 - 0.4.7 – Center-wrapped tiles (services & benefits) so rows align to the middle
+- 0.4.8 – Robust centered tiles (grid) + partner logo spacing tweak (Splunk)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veracity Cyber v0.4.7</title>
+  <title>Veracity Cyber v0.4.8</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -46,14 +47,21 @@ ChatGPT Version Log:
     .footer-inner{width:90%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center}
     .partners-wrap{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
     .partners-wrap .label{opacity:.95;font-weight:800;letter-spacing:.02em;white-space:nowrap;font-size:1rem}
-    .partners{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
-    .partners img{height:44px;width:auto;opacity:.95;transition:opacity .2s,transform .2s}
+    .partners{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+    .partners img{display:block;height:44px;width:auto;opacity:.95;transition:opacity .2s,transform .2s}
     .partners img:hover{opacity:1;transform:translateY(-1px)}
 
     /* Center-wrapped tiles when they flow to new rows */
-    .cards{justify-content:center}
-    .cards .card{margin-left:auto;margin-right:auto}
-    .benefits-grid{justify-content:center;justify-items:center}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;justify-items:center}
+    .cards .card{width:100%;max-width:420px}
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;justify-items:center}
+      /* Robust centering for wrapped tiles */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;justify-items:center}
+    .cards .card{width:100%;max-width:420px}
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;justify-items:center}
+
+    /* Splunk SVG spacing tweak (SVG has extra internal padding) */
+    .partners img[alt="Splunk"]{margin-right:-8px}
   </style>
 </head>
 <body>
@@ -186,7 +194,7 @@ ChatGPT Version Log:
           <img src="assets/partners/sap.svg" alt="SAP" title="SAP" />
         </div>
       </div>
-      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.4.7</p>
+      <p style="margin:0">© 2025 Veracity Cyber. All Rights Reserved. | Version 0.4.8</p>
     </div>
   </footer>
 
@@ -229,3 +237,4 @@ ChatGPT Version Log:
   </script>
 </body>
 </html>
+
